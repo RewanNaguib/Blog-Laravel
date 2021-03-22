@@ -3,10 +3,21 @@
 @section('title')edit Page @endsection
 
 @section('content')
+
 <div class="container">
 <form method="POST" action="{{route('posts.update', ['post' => $post['id']]) }}">
 
 @csrf
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif 
+
 @method('PUT')
   <div class="form-group">
     <label for="title">Title</label>
