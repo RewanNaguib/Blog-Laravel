@@ -39,6 +39,9 @@ class StorePostRequest extends FormRequest
         }
 
         return $rules;
+
+
+        //  $input = $request->only(['title', 'user_id','description']);    //slugggggggg
         
 
     }
